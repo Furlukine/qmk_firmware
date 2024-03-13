@@ -33,7 +33,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_4x6_2(
         TD(TD_ESC_SUP2),  KC_1,   KC_2,   KC_3,     KC_4,     KC_5,             KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_PSCR,
-        KC_TAB,		        FR_A,   FR_Z,	  FR_E,    	FR_R,    	FR_T,             FR_Y,       FR_U,		    FR_I,		    FR_O,   	  FR_P,		    KC_BSP,
+        KC_TAB,		        FR_A,   FR_Z,	  FR_E,    	FR_R,    	FR_T,             FR_Y,       FR_U,		    FR_I,		    FR_O,   	  FR_P,		    KC_BSPC,
         KC_LSFT,	        FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,             FR_H,       FR_J,       FR_K,		    FR_L,   	  FR_M,		    KC_DEL,
         KC_LCTL, 	        FR_W,	  FR_X, 	FR_C,    	FR_V,    	FR_B,             FR_N,  		  FR_COMM,	  FR_SCLN,	  FR_COLN,	  FR_EXLM,	  KC_LALT,
 									    		                          KC_ENT,   MO(1), 	          MO(2),      KC_SPC
@@ -50,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,		FR_A,   FR_Z,	  FR_E,    	FR_R,    	FR_T,                     KC_PGUP,    KC_HOME,		KC_UP,		  KC_END,   	KC_NO,		  KC_NO,
         KC_LSFT,	FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,                     KC_PGDN,    KC_LEFT,    KC_DOWN,		KC_RGHT,   	KC_NO,		  KC_NO,
         KC_LCTL, 	FR_W,	  FR_X, 	FR_C,    	FR_V,    	FR_B,                     KC_NO,  		KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,
-									    		                  KC_SPC,   KMO(1), 	                MO(2),      KC_NO  	  
+									    		                  KC_SPC,   MO(1), 	                MO(2),      KC_NO  	  
 	),
     [3] = LAYOUT_split_4x6_2(
         TD(TD_ESC_SUP2),  KC_1,   KC_2,   KC_3,     KC_4,             KC_5,              KC_6,       KC_7,        KC_8,       KC_9,       KC_0,       KC_DEL,
-        KC_TAB,		        FR_A,   FR_Z,	  FR_E,    	FR_R,    	        FR_T,              FR_Y,       FR_U,		    FR_I,		    FR_O,   	  FR_P,		    KC_BSP,
+        KC_TAB,		        FR_A,   FR_Z,	  FR_E,    	FR_R,    	        FR_T,              FR_Y,       FR_U,		    FR_I,		    FR_O,   	  FR_P,		    KC_BSPC,
         KC_LSFT,	        FR_Q,   FR_S, 	FR_D,    	FR_F,    	        FR_G,              FR_H,       FR_J,        FR_K,		    FR_L,   	  FR_M,		    KC_ENT,
         KC_LCTL, 	        FR_W,	  FR_X, 	FR_C,    	FR_V,    	        FR_B,              FR_N,  		 FR_COMM,	    FR_SCLN,	  FR_COLN,	  FR_EXLM,	  KC_LALT,
 									    		                          LSFT_T(KC_ENT),   MO(1), 	           MO(2),  	   KC_SPC
