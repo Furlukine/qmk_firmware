@@ -18,41 +18,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include <keymap_french.h>
 
+//Tap Dance Declarations
+enum {
+  TD_ESC_SUP2 = 0
+};
+
+//Tap Dance Definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for Esc, twice for Caps Lock
+  [TD_ESC_SUP2]  = ACTION_TAP_DANCE_DOUBLE(KC_ESC, FR_SUP2)
+// Other declarations would go here, separated by commas, if you have them
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_4x6_2(
-        KC_ESC,     KC_1,   KC_2,   KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       FR_RPRN,
-        KC_TAB,		FR_A,   FR_Z,	FR_E,    	FR_R,    	FR_T,       FR_Y,       FR_U,		FR_I,		FR_O,   	FR_P,		KC_PSCR,
-        KC_LSFT,	FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,       FR_H,       FR_J,       FR_K,		FR_L,   	FR_M,		KC_DEL,
-        KC_LCTL, 	FR_W,	FR_X, 	FR_C,    	FR_V,    	FR_B,       FR_N,  		FR_COMM,	FR_SCLN,	FR_COLN,	FR_EXLM,	KC_LALT,
-									    		MO(1),      KC_ESC, 	KC_SPC,  	MO(2)
+        TD(TD_ESC_SUP2),  KC_1,   KC_2,   KC_3,     KC_4,     KC_5,             KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_PSCR,
+        KC_TAB,		        FR_A,   FR_Z,	  FR_E,    	FR_R,    	FR_T,             FR_Y,       FR_U,		    FR_I,		    FR_O,   	  FR_P,		    KC_BSP,
+        KC_LSFT,	        FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,             FR_H,       FR_J,       FR_K,		    FR_L,   	  FR_M,		    KC_DEL,
+        KC_LCTL, 	        FR_W,	  FR_X, 	FR_C,    	FR_V,    	FR_B,             FR_N,  		  FR_COMM,	  FR_SCLN,	  FR_COLN,	  FR_EXLM,	  KC_LALT,
+									    		                          KC_ENT,   MO(1), 	          MO(2),      KC_SPC
 	),
     [1] = LAYOUT_split_4x6_2(
-        KC_1,       KC_2,   KC_3,   KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,    FR_EQL,
-        KC_TAB,		FR_A,   FR_Z,	FR_E,    	FR_R,    	FR_T,       FR_Y,       FR_U,		FR_I,		FR_O,   	FR_P,		KC_PSCR,
-        KC_LSFT,	FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,       FR_H,       FR_J,       FR_K,		FR_L,   	FR_M,		KC_DEL,
-        KC_LCTL, 	FR_W,	FR_X, 	FR_C,    	FR_V,    	FR_B,       FR_N,  		FR_COMM,	FR_SCLN,	FR_COLN,	FR_EXLM,	KC_LALT,
-									    		MO(1),      KC_ESC, 	KC_SPC,  	MO(2)
+        KC_F1,    KC_F2,  KC_F3,  KC_F4,    KC_F5,    KC_F6,                    KC_NO,      KC_NO,      KC_PSLS,    KC_PAST,    KC_PMNS,      KC_PSCR,
+        KC_F7,		KC_F8,  KC_F9,	KC_F10,   KC_F11,   KC_F12,                   KC_NO,      KC_P7,      KC_P8,	    KC_KP_9,   	KC_KP_PLUS,		KC_NO,
+        KC_LSFT,	FR_Q,   FR_S, 	FR_D,    	FR_F,     FR_G,                     KC_NO,      KC_P4,      KC_P5,	    KC_P6,   	  KC_PENT,		  KC_NO,
+        KC_LCTL, 	FR_W,	  FR_X, 	FR_C,    	FR_V,    	FR_B,                     KC_NO,  		KC_P1,	    KC_P2,	    KC_P3,	    KC_PDOT,	    KC_NO,
+									    		                  KC_ESC,   MO(1), 	                  MO(2),  	  KC_KP_0
 	),
     [2] = LAYOUT_split_4x6_2(
-        KC_1,       KC_2,   KC_3,   KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,    KC_EQL,
-        KC_TAB,		FR_A,   FR_Z,	FR_E,    	FR_R,    	FR_T,       FR_Y,       FR_U,		FR_I,		FR_O,   	FR_P,		KC_PSCR,
-        KC_LSFT,	FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,       FR_H,       FR_J,       FR_K,		FR_L,   	FR_M,		KC_DEL,
-        KC_LCTL, 	FR_W,	FR_X, 	FR_C,    	FR_V,    	FR_B,       FR_N,  		FR_COMM,	FR_SCLN,	FR_COLN,	FR_EXLM,	KC_LALT,
-									    		MO(1),      KC_ESC, 	KC_SPC,  	MO(2)
+        KC_1,     KC_2,   KC_3,   KC_4,     KC_5,     KC_6,                     KC_NO,      KC_NO,      KC_NO,      KC_SCRL,    KC_PAUS,    KC_PSCR,
+        KC_TAB,		FR_A,   FR_Z,	  FR_E,    	FR_R,    	FR_T,                     KC_PGUP,    KC_HOME,		KC_UP,		  KC_END,   	KC_NO,		  KC_NO,
+        KC_LSFT,	FR_Q,   FR_S, 	FR_D,    	FR_F,    	FR_G,                     KC_PGDN,    KC_LEFT,    KC_DOWN,		KC_RGHT,   	KC_NO,		  KC_NO,
+        KC_LCTL, 	FR_W,	  FR_X, 	FR_C,    	FR_V,    	FR_B,                     KC_NO,  		KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,
+									    		                  KC_SPC,   KMO(1), 	                MO(2),      KC_NO  	  
+	),
+    [3] = LAYOUT_split_4x6_2(
+        TD(TD_ESC_SUP2),  KC_1,   KC_2,   KC_3,     KC_4,             KC_5,              KC_6,       KC_7,        KC_8,       KC_9,       KC_0,       KC_DEL,
+        KC_TAB,		        FR_A,   FR_Z,	  FR_E,    	FR_R,    	        FR_T,              FR_Y,       FR_U,		    FR_I,		    FR_O,   	  FR_P,		    KC_BSP,
+        KC_LSFT,	        FR_Q,   FR_S, 	FR_D,    	FR_F,    	        FR_G,              FR_H,       FR_J,        FR_K,		    FR_L,   	  FR_M,		    KC_ENT,
+        KC_LCTL, 	        FR_W,	  FR_X, 	FR_C,    	FR_V,    	        FR_B,              FR_N,  		 FR_COMM,	    FR_SCLN,	  FR_COLN,	  FR_EXLM,	  KC_LALT,
+									    		                          LSFT_T(KC_ENT),   MO(1), 	           MO(2),  	   KC_SPC
 	),
 };
-//#ifdef SWAP_HANDS_ENABLE
-//const keypos_t PROGMEM hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
-    /* Left hand, matrix positions */
-//    {{0, 5}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {5, 5}},
-//    {{0, 6}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}},
-//    {{0, 7}, {1, 7}, {2, 7}, {3, 7}, {4, 7}, {5, 7}},
-//    {{0, 8}, {1, 8}, {2, 8}, {3, 8}, {4, 8}, {5, 8}},
-//    {{0, 9}, {1, 9}, {2, 9}, {3, 9}, {4, 9}, {5, 9}},
-    /* Right hand, matrix positions */
-//    {{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}},
-//    {{0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1}},
-//    {{0, 2}, {1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2}},
-//    {{0, 3}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}},
-//    {{0, 4}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}}
-//};
